@@ -39,7 +39,10 @@ def eldest_customer_per_state(customers):
     }
     """
     # Write your code here
-    pass
+    eldest = {}
+    for customer in customers:
+        
+        
 
 
 class EldestCustomerTestCase(unittest.TestCase):

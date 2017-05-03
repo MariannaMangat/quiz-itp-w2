@@ -30,12 +30,9 @@ def number_of_customers_per_state(customers):
     """
     # Write your code here
     expected_result = {}
-    for customer in customers:
-        for k,v in customers:
-            expected_result += customer
-        expected_result[k] = len(v)
-    return expected_result 
-    
+    for k,v in customers.items():
+        expected_result[k] = len(v) or []
+    return expected_result     
 
 
 class NumberOfCustomersPerStateTestCase(unittest.TestCase):

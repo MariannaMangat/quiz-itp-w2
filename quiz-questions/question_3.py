@@ -40,11 +40,18 @@ def eldest_customer_per_state(customers):
     """
     # Write your code here
     eldest = {}
-    for customer in customers:
+    for state, state_customers in customers.items():
+        max_age = 0
+        if len(state_customers) == 0:
+            eldest[state] = None
+        else:
+            for person in state_customers:
+                if person['age'] > max_age:
+                    max_age = person['age']
+                    eldest[state] = person
+    return eldest
         
         
-
-
 class EldestCustomerTestCase(unittest.TestCase):
     def test_eldest_customers(self):
         """Should return the eldest customer per state."""
